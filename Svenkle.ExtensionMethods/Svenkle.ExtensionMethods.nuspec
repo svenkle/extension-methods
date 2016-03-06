@@ -12,6 +12,7 @@
 	<summary>A collection of useful extension methods.</summary>
     <description>A collection of useful extension methods that have no external dependencies.</description>
     <copyright>Copyright © Svenkle 2016</copyright>
+	<releaseNotes>Initial release of Extension Methods</releaseNotes>
     <tags>extensions utility</tags>
   </metadata>
 </package>

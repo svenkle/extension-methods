@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>Svenkle.ExtensionMethods</id>
+    <title>Extension Methods</title>
+    <version>1.0.0</version>
+	<authors>Svenkle</authors>
+    <owners>Svenkle</owners>
+	<projectUrl>https://github.com/svenkle/extension-methods</projectUrl>
+	<licenseUrl>https://github.com/svenkle/extension-methods/blob/master/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+	<summary>A collection of useful extension methods.</summary>
+    <description>A collection of useful extension methods that have no external dependencies.</description>
+    <copyright>Copyright © Svenkle 2016</copyright>
+    <tags>extensions utility</tags>
+  </metadata>
+</package>

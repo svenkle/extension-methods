@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -22,7 +23,12 @@ namespace Svenkle.ExtensionMethods
         {
             return str.Split(new[] { separator }, options);
         }
-        
+
+        public static string[] Split(this string str, string separator)
+        {
+            return str.Split(new[] { separator }, StringSplitOptions.None);
+        }
+
         public static string ToHash(this string @string)
         {
             var bytes = Encoding.UTF8.GetBytes(@string);
@@ -44,5 +50,11 @@ namespace Svenkle.ExtensionMethods
             var hashGuid = new Guid(hashBytes);
             return hashGuid;
         }
+        
+        public static string RemoveWhitespace(this string str)
+        {
+            return new string(str.Where(x => !char.IsWhiteSpace(x)).ToArray());
+        }
+
     }
 }

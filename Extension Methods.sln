@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Svenkle.ExtensionMethods", "Svenkle.ExtensionMethods\Svenkle.ExtensionMethods.csproj", "{D1509B6C-0282-48A2-A7C2-BC8C2B3FFCF1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Svenkle.ExtensionMethods.Tests", "Svenkle.ExtensionMethods.Tests\Svenkle.ExtensionMethods.Tests.csproj", "{DDB0B962-B004-414E-80F4-28DC75E6EC88}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{D1509B6C-0282-48A2-A7C2-BC8C2B3FFCF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D1509B6C-0282-48A2-A7C2-BC8C2B3FFCF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D1509B6C-0282-48A2-A7C2-BC8C2B3FFCF1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDB0B962-B004-414E-80F4-28DC75E6EC88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDB0B962-B004-414E-80F4-28DC75E6EC88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDB0B962-B004-414E-80F4-28DC75E6EC88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDB0B962-B004-414E-80F4-28DC75E6EC88}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -7,10 +7,10 @@ namespace Svenkle.ExtensionMethods
 {
     public static class StringExtensions
     {
-        public static byte[] ToByteArray(this string @string)
+        public static byte[] ToByteArray(this string str)
         {
-            var bytes = new byte[@string.Length * sizeof(char)];
-            Buffer.BlockCopy(@string.ToCharArray(), 0, bytes, 0, bytes.Length);
+            var bytes = new byte[str.Length * sizeof(char)];
+            Buffer.BlockCopy(str.ToCharArray(), 0, bytes, 0, bytes.Length);
             return bytes;
         }
 
@@ -29,9 +29,9 @@ namespace Svenkle.ExtensionMethods
             return str.Split(new[] { separator }, StringSplitOptions.None);
         }
 
-        public static string ToHash(this string @string)
+        public static string ToHash(this string str)
         {
-            var bytes = Encoding.UTF8.GetBytes(@string);
+            var bytes = Encoding.UTF8.GetBytes(str);
             var shaProvider = new SHA1CryptoServiceProvider();
             var hashBytes = shaProvider.ComputeHash(bytes);
 
@@ -42,10 +42,10 @@ namespace Svenkle.ExtensionMethods
             return sb.ToString();
         }
 
-        public static Guid ToGuid(this string @string)
+        public static Guid ToGuid(this string str)
         {
             var provider = new MD5CryptoServiceProvider();
-            var inputBytes = Encoding.Default.GetBytes(@string);
+            var inputBytes = Encoding.Default.GetBytes(str);
             var hashBytes = provider.ComputeHash(inputBytes);
             var hashGuid = new Guid(hashBytes);
             return hashGuid;

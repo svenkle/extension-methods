@@ -33,6 +33,21 @@ namespace Svenkle.ExtensionMethods.Tests
             }
         }
 
+        public class TheToHashHMACSHA256Method
+        {
+            [Fact]
+            public void HashesAString()
+            {
+                // Prepare
+                const string stringValue = "HMACSHA256";
+                const string secret = "SECRETKEY";
+                const string expected = "7AD9D0C6D5D3DE8FD15C37DC650C45E784B563F1837BB4B516209FB0059711B6";
+
+                // Act & Assert
+                Assert.True(stringValue.ToHMACSHA256Hash(secret).Equals(expected, StringComparison.InvariantCultureIgnoreCase));
+            }
+        }
+
         public class TheToHashMD5Method
         {
             [Fact]
@@ -74,7 +89,7 @@ namespace Svenkle.ExtensionMethods.Tests
                 Assert.Equal(stringValue.ToGuid().ToString(), expected);
             }
         }
-        
+
         public class TheToByteArrayMethod
         {
             [Fact]

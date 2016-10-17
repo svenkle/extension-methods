@@ -29,6 +29,12 @@ namespace Svenkle.ExtensionMethods
             return str.Split(new[] { separator }, StringSplitOptions.None);
         }
 
+        [Obsolete("Please use ToMD5Hash instead or consider upgrading to one of the newer hashing methods ToSHA1Hash or ToSHA256Hash")]
+        public static string ToHash(this string str)
+        {
+            return str.ToMD5Hash();
+        }
+
         public static string ToSHA1Hash(this string str)
         {
             var bytes = Encoding.UTF8.GetBytes(str);
@@ -59,6 +65,20 @@ namespace Svenkle.ExtensionMethods
         {
             var bytes = Encoding.UTF8.GetBytes(str);
             var shaProvider = new SHA256CryptoServiceProvider();
+            var hashBytes = shaProvider.ComputeHash(bytes);
+
+            var sb = new StringBuilder();
+            foreach (var b in hashBytes)
+                sb.Append(b.ToString("X2"));
+
+            return sb.ToString();
+        }
+        
+        public static string ToHMACSHA256Hash(this string str, string secret)
+        {
+            var bytes = Encoding.UTF8.GetBytes(str);
+            var secretBytes = Encoding.UTF8.GetBytes(secret);
+            var shaProvider = new HMACSHA256(secretBytes);
             var hashBytes = shaProvider.ComputeHash(bytes);
 
             var sb = new StringBuilder();

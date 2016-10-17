@@ -29,10 +29,36 @@ namespace Svenkle.ExtensionMethods
             return str.Split(new[] { separator }, StringSplitOptions.None);
         }
 
-        public static string ToHash(this string str)
+        public static string ToSHA1Hash(this string str)
         {
             var bytes = Encoding.UTF8.GetBytes(str);
             var shaProvider = new SHA1CryptoServiceProvider();
+            var hashBytes = shaProvider.ComputeHash(bytes);
+
+            var sb = new StringBuilder();
+            foreach (var b in hashBytes)
+                sb.Append(b.ToString("X2"));
+
+            return sb.ToString();
+        }
+        
+        public static string ToMD5Hash(this string str)
+        {
+            var bytes = Encoding.UTF8.GetBytes(str);
+            var shaProvider = new MD5CryptoServiceProvider();
+            var hashBytes = shaProvider.ComputeHash(bytes);
+
+            var sb = new StringBuilder();
+            foreach (var b in hashBytes)
+                sb.Append(b.ToString("X2"));
+
+            return sb.ToString();
+        }
+        
+        public static string ToSHA256Hash(this string str)
+        {
+            var bytes = Encoding.UTF8.GetBytes(str);
+            var shaProvider = new SHA256CryptoServiceProvider();
             var hashBytes = shaProvider.ComputeHash(bytes);
 
             var sb = new StringBuilder();

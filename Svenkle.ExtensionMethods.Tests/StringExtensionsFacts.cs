@@ -5,17 +5,45 @@ namespace Svenkle.ExtensionMethods.Tests
 {
     public class StringExtensionsFacts
     {
-        public class TheToHashMethod
+        public class TheToHashSHA1Method
         {
             [Fact]
             public void HashesAString()
             {
                 // Prepare
-                const string stringValue = "213";
-                const string expected = "19187DC98DCE52FA4C4E8E05B341A9B77A51FD26";
+                const string stringValue = "SHA1";
+                const string expected = "e1744a525099d9a53c0460ef9cb7ab0e4c4fc939";
 
                 // Act & Assert
-                Assert.Equal(stringValue.ToHash(), expected);
+                Assert.True(stringValue.ToSHA1Hash().Equals(expected, StringComparison.InvariantCultureIgnoreCase));
+            }
+        }
+
+        public class TheToHashSHA256Method
+        {
+            [Fact]
+            public void HashesAString()
+            {
+                // Prepare
+                const string stringValue = "SHA256";
+                const string expected = "b3abe5d8c69b38733ad57ea75e83bcae42bbbbac75e3a5445862ed2f8a2cd677";
+
+                // Act & Assert
+                Assert.True(stringValue.ToSHA256Hash().Equals(expected, StringComparison.InvariantCultureIgnoreCase));
+            }
+        }
+
+        public class TheToHashMD5Method
+        {
+            [Fact]
+            public void HashesAString()
+            {
+                // Prepare
+                const string stringValue = "MD5";
+                const string expected = "7f138a09169b250e9dcb378140907378";
+
+                // Act & Assert
+                Assert.True(stringValue.ToMD5Hash().Equals(expected, StringComparison.InvariantCultureIgnoreCase));
             }
         }
 

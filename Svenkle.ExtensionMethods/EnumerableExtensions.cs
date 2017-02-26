@@ -27,6 +27,17 @@ namespace Svenkle.ExtensionMethods
             }
         }
 
+        public static T Choose<T>(this IEnumerable<T> enumerable)
+        {
+            return enumerable.Choose(new Random());
+        }
+
+        public static T Choose<T>(this IEnumerable<T> enumerable, Random random)
+        {
+            var array = enumerable as T[] ?? enumerable.ToArray();
+            return array.ElementAt(random.Next(array.Length));
+        }
+
         public static string Join(this IEnumerable<string> values, char separator)
         {
             return string.Join(new string(new[] { separator }), values);
@@ -59,7 +70,7 @@ namespace Svenkle.ExtensionMethods
                 yield return GeneratePermutation(array, sequence);
             }
         }
-        
+
         private static IEnumerable<T> GeneratePermutation<T>(T[] array, IReadOnlyList<int> sequence)
         {
             var clone = (T[])array.Clone();
@@ -86,7 +97,7 @@ namespace Svenkle.ExtensionMethods
 
             return sequence;
         }
-        
+
         private static void Swap<T>(ref T a, ref T b)
         {
             var temp = a;

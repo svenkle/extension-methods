@@ -34,6 +34,47 @@ namespace Svenkle.ExtensionMethods.Tests
             }
         }
 
+        public class TheChooseMethod
+        {
+            [Fact]
+            public void HandlesSingleElementLists()
+            {
+                // Prepare
+                const string expected = "a";
+                var elements = new[] { "a" };
+
+                // Act & Assert
+                Assert.Equal(expected, elements.Choose());
+            }
+
+            [Fact]
+            public void DoesntHaveAOffByOneError()
+            {
+                // Prepare
+                var elements = new List<string>();
+                var expected = new[] { "a", "b", "c", "d", "e" };
+                var random = new Random();
+
+                // Act
+                for (var i = 0; i < 50; i++)
+                    elements.Add(expected.Choose(random));
+
+                //Assert
+                Assert.Equal(expected, elements.Distinct().OrderBy(x => x).ToList());
+            }
+
+            [Fact]
+            public void ReturnsASingleElementOfElementsUsingDeterminedSeed()
+            {
+                // Prepare
+                const string expected = "b";
+                var elements = new[] { "a", "b", "c", "d", "e" };
+
+                // Act & Assert
+                Assert.Equal(expected, elements.Choose(new Random(1)));
+            }
+        }
+
         public class GetPermutationsMethod
         {
             [Fact]

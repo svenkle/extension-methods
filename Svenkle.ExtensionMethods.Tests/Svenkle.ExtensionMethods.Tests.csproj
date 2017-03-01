@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EnumerableExtensionsFacts.cs" />
+    <Compile Include="UriExtensionsFacts.cs" />
     <Compile Include="StringExtensionsFacts.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Svenkle.ExtensionMethods", "Svenkle.ExtensionMethods\Svenkle.ExtensionMethods.csproj", "{D1509B6C-0282-48A2-A7C2-BC8C2B3FFCF1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Svenkle.ExtensionMethods", "src\Svenkle.ExtensionMethods\Svenkle.ExtensionMethods.csproj", "{D1509B6C-0282-48A2-A7C2-BC8C2B3FFCF1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Svenkle.ExtensionMethods.Tests", "Svenkle.ExtensionMethods.Tests\Svenkle.ExtensionMethods.Tests.csproj", "{DDB0B962-B004-414E-80F4-28DC75E6EC88}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Svenkle.ExtensionMethods.Tests", "test\Svenkle.ExtensionMethods.Tests\Svenkle.ExtensionMethods.Tests.csproj", "{DDB0B962-B004-414E-80F4-28DC75E6EC88}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

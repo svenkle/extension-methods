@@ -71,6 +71,14 @@ namespace Svenkle.ExtensionMethods
             }
         }
 
+        public static void Each<T>(this IEnumerable<T> enumeration, Action<T> action)
+        {
+            foreach (var item in enumeration)
+            {
+                action(item);
+            }
+        }
+
         private static IEnumerable<T> GeneratePermutation<T>(T[] array, IReadOnlyList<int> sequence)
         {
             var clone = (T[])array.Clone();
